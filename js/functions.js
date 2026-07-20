@@ -1,19 +1,12 @@
 
 // Rock Paper Scissors
+
+//Rock
 const rock = document.getElementById('rock');
 rock.addEventListener("click", () => {
-  const randomNumber = Math.random();
-  let computerMove = '';
+  const computerMove = pickComputerMove();
+
   let result = '';
-
-  if (randomNumber < 1 / 3) {
-    computerMove = 'rock';
-  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-    computerMove = 'paper';
-  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-    computerMove = 'scissors';
-  };
-
   if (computerMove === 'rock') {
     result = 'Tie.';
   } else if (computerMove === 'paper') {
@@ -25,20 +18,12 @@ rock.addEventListener("click", () => {
   alert(`You picked rock. Computer picked ${computerMove}. ${result}`);
 });
 
+//Paper
 const paper = document.getElementById('paper');
 paper.addEventListener("click", () => {
-  const randomNumber = Math.random();
-  let computerMove = '';
+ const computerMove = pickComputerMove();
+
   let result = '';
-
-  if (randomNumber < 1 / 3) {
-    computerMove = 'rock';
-  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-    computerMove = 'paper';
-  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-    computerMove = 'scissors';
-  };
-
   if (computerMove === 'rock') {
     result = 'You win.';
   } else if (computerMove === 'paper') {
@@ -50,20 +35,12 @@ paper.addEventListener("click", () => {
   alert(`You picked paper. Computer picked ${computerMove}. ${result}`);
 });
 
+//Scissors
 const scissors = document.getElementById('scissors');
 scissors.addEventListener("click", () => {
-  const randomNumber = Math.random();
-  let computerMove = '';
+  const computerMove = pickComputerMove();
+
   let result = '';
-
-  if (randomNumber < 1 / 3) {
-    computerMove = 'rock';
-  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-    computerMove = 'paper';
-  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-    computerMove = 'scissors';
-  };
-
   if (computerMove === 'rock') {
     result = 'You lose.';
   } else if (computerMove === 'paper') {
@@ -74,3 +51,19 @@ scissors.addEventListener("click", () => {
 
   alert(`You picked scissors. Computer picked ${computerMove}. ${result}`);
 });
+
+
+function pickComputerMove() {
+  const randomNumber = Math.random();
+  let computerMove = '';
+
+  if (randomNumber < 1 / 3) {
+    computerMove = 'rock';
+  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+    computerMove = 'paper';
+  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+    computerMove = 'scissors';
+  };
+
+  return computerMove;
+};
