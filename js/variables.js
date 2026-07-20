@@ -7,49 +7,57 @@ btn1.addEventListener("click", () => {
 
 const addCart = document.getElementById('btn2');
 addCart.addEventListener("click", () => {
+  cartQuantity + 1 > 10 ? alert('The cart is full') : 
   cartQuantity++;
   console.log(`Cart quantity: ${cartQuantity}`);
 });
 
 const removeCart = document.getElementById('btn8');
 removeCart.addEventListener("click", () => {
+  cartQuantity - 1 < 0 ? alert('The cart is empty') : 
   cartQuantity--;
   console.log(`Cart quantity: ${cartQuantity}`);
 });
 
 const btn3 = document.getElementById('btn3');
 btn3.addEventListener("click", () => {
+  cartQuantity + 2 > 10 ? alert('The cart is full') : 
   cartQuantity += 2;
   console.log(`Cart quantity: ${cartQuantity}`);
 });
 
 const btn4 = document.getElementById('btn4');
 btn4.addEventListener("click", () => {
+  cartQuantity + 3 > 10 ? alert('The cart is full') : 
   cartQuantity += 3;
   console.log(`Cart quantity: ${cartQuantity}`);
 });
 
 const btn6 = document.getElementById('btn6');
 btn6.addEventListener("click", () => {
+  cartQuantity + 4 > 10 ? alert('The cart is full') : 
   cartQuantity += 4;
   console.log(`Cart quantity: ${cartQuantity}`);
 });
 
 const btn7 = document.getElementById('btn7');
 btn7.addEventListener("click", () => {
+  cartQuantity + 5 > 10 ? alert('The cart is full') : 
   cartQuantity += 5;
   console.log(`Cart quantity: ${cartQuantity}`);
 });
 
 const btn9 = document.getElementById('btn9');
 btn9.addEventListener("click", () => {
-  cartQuantity -= 2;
+  cartQuantity - 2 < 0 ? alert('The cart is empty') : 
+  cartQuantity -=2;
   console.log(`Cart quantity: ${cartQuantity}`);
 });
 
 const btn10 = document.getElementById('btn10');
 btn10.addEventListener("click", () => {
-  cartQuantity -= 3;
+  cartQuantity - 3 < 0 ? alert('The cart is empty') : 
+  cartQuantity -=3;
   console.log(`Cart quantity: ${cartQuantity}`);
 });
 
