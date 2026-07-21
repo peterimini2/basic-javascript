@@ -42,7 +42,7 @@ function playGame(playerMove) {
     } else if (computerMove === 'scissors') {
       result = 'You lose.'
     }
-    
+
     } else if (playerMove === 'rock') {
       if (computerMove === 'rock') {
       result = 'Tie.';
@@ -70,3 +70,15 @@ function pickComputerMove() {
 
   return computerMove;
 };
+
+// Function exercise
+function greet(name) { 
+  if (!name) {
+    console.log('Hi there!');
+  } else {
+    console.log(`Hello, ${name}`);
+  }
+};
+
+greet('Peter');
+greet();
