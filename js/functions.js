@@ -82,3 +82,10 @@ function greet(name) {
 
 greet('Peter');
 greet();
+
+const product = {
+  name: 'shirt',
+  'delivery - time': '1 day',
+  address: 'Jakpa road'
+};
+console.log(product);
