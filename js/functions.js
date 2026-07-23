@@ -86,6 +86,22 @@ greet();
 const product = {
   name: 'shirt',
   'delivery - time': '1 day',
-  address: 'Jakpa road'
+  address: 'Jakpa road',
+  rating: {
+    stars: 4.6,
+    count: 60
+  },
+  fun: function function1() {
+    console.log('Function inside object');
+  }
 };
 console.log(product);
+console.log(product.address);
+console.log(product.rating.stars);
+product.fun;
+
+console.log(JSON.stringify(product));
+
+const jsonToString = JSON.stringify(product);
+
+console.log(JSON.parse(jsonToString));
