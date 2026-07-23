@@ -19,13 +19,25 @@ scissors.addEventListener("click", () => {
   playGame('scissors');
 });
 
+const reset = document.getElementById('reset');
+reset.addEventListener("click", () => {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  localStorage.removeItem('score');
+  alert('Score reset successfully.');
+});
+
+const score = JSON.parse(localStorage.getItem('score'));
+
+
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
 
   let result = '';
 
-  if (playerMove === 'scisssors') {
+  if (playerMove === 'scissors') {
       if (computerMove === 'rock') {
       result = 'You lose.';
     } else if (computerMove === 'paper') {
@@ -53,7 +65,18 @@ function playGame(playerMove) {
     };
   }
 
-  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+  if (result === 'You win.') {
+    score.wins += 1
+  } else if (result === 'You lose.') {
+    score.losses += 1
+  } else if (result === 'Tie.') {
+    score.ties += 1
+  }
+
+  localStorage.setItem('score', JSON.stringify(score));
+
+  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+  Wins: ${score.wins} Loss: ${score.losses} Ties: ${score.ties}`);
 };
 
 function pickComputerMove() {

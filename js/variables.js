@@ -73,17 +73,3 @@ order.addEventListener("click", () => {
   console.log(`Order Successful. Total: ${cartQuantity}`);
 });
 
-
-//Exercise
-let name = 'Peter.';
-console.log(`My name is ${name}`);
-
-let cost = 5 + 3 + 3 + 9;
-console.log(`Cost of food: $${cost}.`);
-
-let tax = (5 + 3 + 3 + 9) * 0.1;
-console.log(`Tax(10%): $${tax}.`);
-
-let totalCost = cost + tax;
-console.log(`Total Cost: $${totalCost}.`);
-
