@@ -1,0 +1,107 @@
+
+// Rock Paper Scissors
+
+//Rock
+const rock = document.getElementById('rock');
+rock.addEventListener("click", () => {
+  playGame('rock');
+});
+
+//Paper
+const paper = document.getElementById('paper');
+paper.addEventListener("click", () => {
+  playGame('paper');
+});
+
+//Scissors
+const scissors = document.getElementById('scissors');
+scissors.addEventListener("click", () => {
+  playGame('scissors');
+});
+
+
+function playGame(playerMove) {
+  const computerMove = pickComputerMove();
+
+  let result = '';
+
+  if (playerMove === 'scisssors') {
+      if (computerMove === 'rock') {
+      result = 'You lose.';
+    } else if (computerMove === 'paper') {
+      result = 'You win.'
+    } else if (computerMove === 'scissors') {
+        result = 'Tie.'
+    }
+
+    } else if (playerMove === 'paper') {
+      if (computerMove === 'rock') {
+      result = 'You win.';
+    } else if (computerMove === 'paper') {
+      result = 'Tie.'
+    } else if (computerMove === 'scissors') {
+      result = 'You lose.'
+    }
+
+    } else if (playerMove === 'rock') {
+      if (computerMove === 'rock') {
+      result = 'Tie.';
+    } else if (computerMove === 'paper') {
+      result = 'You lose.'
+    } else if (computerMove === 'scissors') {
+      result = 'You win.'
+    };
+  }
+
+  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+};
+
+function pickComputerMove() {
+  const randomNumber = Math.random();
+  let computerMove = '';
+
+  if (randomNumber < 1 / 3) {
+    computerMove = 'rock';
+  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+    computerMove = 'paper';
+  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+    computerMove = 'scissors';
+  };
+
+  return computerMove;
+};
+
+// Function exercise
+function greet(name) { 
+  if (!name) {
+    console.log('Hi there!');
+  } else {
+    console.log(`Hello, ${name}`);
+  }
+};
+
+greet('Peter');
+greet();
+
+const product = {
+  name: 'shirt',
+  'delivery - time': '1 day',
+  address: 'Jakpa road',
+  rating: {
+    stars: 4.6,
+    count: 60
+  },
+  fun: function function1() {
+    console.log('Function inside object');
+  }
+};
+console.log(product);
+console.log(product.address);
+console.log(product.rating.stars);
+product.fun;
+
+console.log(JSON.stringify(product));
+
+const jsonToString = JSON.stringify(product);
+
+console.log(JSON.parse(jsonToString));
