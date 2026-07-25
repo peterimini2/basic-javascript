@@ -5,3 +5,8 @@ button {
   color: white;
   padding: 6px;
 }
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(86, 85, 85);
+}
