@@ -21,7 +21,7 @@
 
 const subscribeBtn = document.querySelector('.subscribe-btn');
 subscribeBtn.addEventListener("click", () => {
-  subscribeBtn.textContent === 'Subscribe' ?
-    subscribeBtn.textContent = 'Subscribed'
-    : subscribeBtn.textContent = 'Subscribe';
+  subscribeBtn.innerHTML === 'Subscribe' ?
+    subscribeBtn.innerHTML = 'Subscribed'
+    : subscribeBtn.innerHTML = 'Subscribe';
 });
