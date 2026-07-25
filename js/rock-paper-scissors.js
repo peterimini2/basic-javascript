@@ -19,13 +19,25 @@ scissors.addEventListener("click", () => {
   playGame('scissors');
 });
 
+const reset = document.getElementById('reset');
+reset.addEventListener("click", () => {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  localStorage.removeItem('score');
+  alert('Score reset successfully.');
+});
+
+const score = JSON.parse(localStorage.getItem('score'));
+
+
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
 
   let result = '';
 
-  if (playerMove === 'scisssors') {
+  if (playerMove === 'scissors') {
       if (computerMove === 'rock') {
       result = 'You lose.';
     } else if (computerMove === 'paper') {
@@ -53,7 +65,18 @@ function playGame(playerMove) {
     };
   }
 
-  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+  if (result === 'You win.') {
+    score.wins += 1
+  } else if (result === 'You lose.') {
+    score.losses += 1
+  } else if (result === 'Tie.') {
+    score.ties += 1
+  }
+
+  localStorage.setItem('score', JSON.stringify(score));
+
+  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+  Wins: ${score.wins} Loss: ${score.losses} Ties: ${score.ties}`);
 };
 
 function pickComputerMove() {
@@ -70,38 +93,3 @@ function pickComputerMove() {
 
   return computerMove;
 };
-
-// Function exercise
-function greet(name) { 
-  if (!name) {
-    console.log('Hi there!');
-  } else {
-    console.log(`Hello, ${name}`);
-  }
-};
-
-greet('Peter');
-greet();
-
-const product = {
-  name: 'shirt',
-  'delivery - time': '1 day',
-  address: 'Jakpa road',
-  rating: {
-    stars: 4.6,
-    count: 60
-  },
-  fun: function function1() {
-    console.log('Function inside object');
-  }
-};
-console.log(product);
-console.log(product.address);
-console.log(product.rating.stars);
-product.fun;
-
-console.log(JSON.stringify(product));
-
-const jsonToString = JSON.stringify(product);
-
-console.log(JSON.parse(jsonToString));
