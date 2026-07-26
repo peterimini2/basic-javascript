@@ -19,9 +19,14 @@
 
 //PROJECT
 
+
 const subscribeBtn = document.querySelector('.subscribe-btn');
 subscribeBtn.addEventListener("click", () => {
+  subscribe();
+});
+
+function subscribe() {
   subscribeBtn.innerHTML === 'Subscribe' ?
     subscribeBtn.innerHTML = 'Subscribed'
     : subscribeBtn.innerHTML = 'Subscribe';
-});
+}
