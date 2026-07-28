@@ -95,3 +95,22 @@ checkBtn.addEventListener("click", () => {
     scoreResult.innerHTML = 'Fail.'
   }
 })
+
+//Age Result
+const ageText = document.querySelector('.age-text');
+const ageBtn = document.querySelector('.age-btn');
+const ageResult = document.getElementById('ageResult');
+
+ageBtn.addEventListener("click", () => {
+  const age = ageText.value
+
+  if (ageText.value.trim() === "") {
+    ageResult.innerHTML = 'Please input age'
+  } else if (age <= 12) {
+    ageResult.innerHTML = 'Child.';
+  } else if (age <= 17) {
+    ageResult.innerHTML = 'Teenager.'
+  } else {
+    ageResult.innerHTML = 'Adult.'
+  }
+})
