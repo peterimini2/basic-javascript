@@ -68,3 +68,30 @@ safe.addEventListener("click", () => {
   
 });
 
+//Odd and even calculator
+let num = Number(prompt("Enter a number:"));
+
+if (num % 2 === 0) {
+  console.log("Even");
+} else if (!num) {
+  console.log('Not a number')
+} else {
+  console.log("Odd");
+}
+
+//Pass/ Fail
+const scoreText = document.querySelector('.score-text');
+const checkBtn = document.querySelector('.check-btn');
+const scoreResult = document.getElementById('scoreResult');
+
+checkBtn.addEventListener("click", () => {
+  const score = scoreText.value
+
+  if (scoreText.value.trim() === "") {
+    scoreResult.innerHTML = 'Please input score'
+  } else if (score >= 50) {
+    scoreResult.innerHTML = 'Pass.';
+  } else {
+    scoreResult.innerHTML = 'Fail.'
+  }
+})

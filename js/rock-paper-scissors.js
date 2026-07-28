@@ -30,6 +30,8 @@ reset.addEventListener("click", () => {
 
 const score = JSON.parse(localStorage.getItem('score'));
 
+document.querySelector('.js-score')
+  .innerHTML = `Wins: ${ score.wins } Loss: ${ score.losses } Ties: ${ score.ties }`;
 
 
 function playGame(playerMove) {
