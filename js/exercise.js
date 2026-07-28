@@ -208,3 +208,26 @@ voteBtn.addEventListener("click", () => {
     voteResult.innerHTML = 'You are NOT eligible to vote.'
   }
 })
+
+// Simple Calculator
+const num1 = document.getElementById('num-1');
+const num2 = document.getElementById('num-2');
+const operator = document.getElementById('operator');
+const calcBtn = document.getElementById('calc-btn');
+const calcResult = document.getElementById('calc-result');
+
+calcBtn.addEventListener("click", () => {
+  if (operator.value.trim() === "" || num1.value.trim() === "" || num2.value.trim() === "") {
+    calcResult.innerHTML = 'Please enter correctly.'
+  } else if (operator.value === '+') {
+    calcResult.innerHTML = `${num1.value}` + `${num2.value}`
+  } else if (operator.value === '-') {
+    calcResult.innerHTML = `${num1.value}` - `${num2.value}`
+  } else if (operator.value === '*') {
+    calcResult.innerHTML = `${num1.value}` * `${num2.value}`
+  } else if (operator.value === '/') {
+    calcResult.innerHTML = `${num1.value}` / `${num2.value}`
+  } else {
+    calcResult.innerHTML = 'Invalid operation.'
+  }
+})
