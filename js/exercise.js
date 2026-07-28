@@ -96,7 +96,7 @@ checkBtn.addEventListener("click", () => {
   }
 })
 
-//Age Result
+// Age result
 const ageText = document.querySelector('.age-text');
 const ageBtn = document.querySelector('.age-btn');
 const ageResult = document.getElementById('ageResult');
@@ -112,5 +112,24 @@ ageBtn.addEventListener("click", () => {
     ageResult.innerHTML = 'Teenager.'
   } else {
     ageResult.innerHTML = 'Adult.'
+  }
+})
+
+//Positive / Negative
+const numText = document.querySelector('.num-text');
+const numBtn = document.querySelector('.num-btn');
+const numResult = document.getElementById('numResult');
+
+numBtn.addEventListener("click", () => {
+  const num = numText.value
+
+  if (numText.value.trim() === "") {
+    numResult.innerHTML = 'Please input number'
+  } else if (num > 0) {
+    numResult.innerHTML = 'Positive.';
+  } else if (num < 0) {
+    numResult.innerHTML = 'Negative.'
+  } else {
+    numResult.innerHTML = 'Zero.'
   }
 })
