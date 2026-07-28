@@ -141,7 +141,6 @@ const loginBtn = document.querySelector('.login-btn');
 const loginResult = document.getElementById('loginResult');
 
 loginBtn.addEventListener("click", () => {
-  const details = userName.value && password.value;
 
   if (userName.value.trim() === "" || password.value.trim() === "") {
     loginResult.innerHTML = "Please enter login details"
@@ -151,3 +150,47 @@ loginBtn.addEventListener("click", () => {
     loginResult.innerHTML = 'Invalid login details'
   }
 })
+
+// Largest Number
+const largeNumber = document.querySelector('.large-num');
+const smallNumber = document.querySelector('.small-num');
+const checkNum = document.querySelector('.check-num');
+const showResult = document.querySelector('.num-output')
+
+checkNum.addEventListener("click", () => {
+
+  if (largeNumber.value.trim() === "" || smallNumber.value.trim() === "" ) {
+    showResult.innerHTML = 'Please enter number'
+  } else if (Number(largeNumber.value > smallNumber.value)) {
+    showResult.innerHTML =  `${largeNumber.value} is higher.`
+  } else if (Number(largeNumber.value < smallNumber.value)) {
+    showResult.innerHTML = `${ smallNumber.value } is higher.`
+  } else if (Number.isNaN(large) || Number.isNaN(small)) {
+    showResult.innerHTML = 'Please enter numbers only.'
+  } else {
+    showResult.innerHTML = 'They are equal.'
+  }
+})
+
+// Grade Checker
+const examScore = document.querySelector('#exam-score');
+const gradeBtn = document.querySelector('.grade-btn');
+const grade = document.querySelector('.grade-score')
+
+gradeBtn.addEventListener("click", () => {
+  if (examScore.value.trim() === "") {
+    grade.innerHTML = 'Please enter your exam score.'
+  } else if (examScore.value >= 70) {
+    grade.innerHTML = "Your grade is 'A'."
+  } else if (examScore.value >= 60 && examScore.value <= 69) {
+    grade.innerHTML = "Your grade is 'B'."
+  } else if (examScore.value >= 50 && examScore.value <= 59) {
+    grade.innerHTML = "Your grade is 'C'."
+  } else if (examScore.value >= 40 && examScore.value <= 49) {
+    grade.innerHTML = "Your grade is 'D'."
+  } else {
+    grade.innerHTML = 'You failed the exam.'
+  }
+})
+
+/
