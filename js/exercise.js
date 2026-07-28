@@ -121,7 +121,7 @@ const numBtn = document.querySelector('.num-btn');
 const numResult = document.getElementById('numResult');
 
 numBtn.addEventListener("click", () => {
-  const num = numText.value
+  const num = numText.value;
 
   if (numText.value.trim() === "") {
     numResult.innerHTML = 'Please input number'
@@ -131,5 +131,23 @@ numBtn.addEventListener("click", () => {
     numResult.innerHTML = 'Negative.'
   } else {
     numResult.innerHTML = 'Zero.'
+  }
+})
+
+//Login 
+const userName = document.querySelector('.username');
+const password = document.querySelector('.password');
+const loginBtn = document.querySelector('.login-btn');
+const loginResult = document.getElementById('loginResult');
+
+loginBtn.addEventListener("click", () => {
+  const details = userName.value && password.value;
+
+  if (userName.value.trim() === "" || password.value.trim() === "") {
+    loginResult.innerHTML = "Please enter login details"
+  } else if (userName.value === 'Peter' && password.value === '024118') {
+    loginResult.innerHTML = 'Login Successful.'
+  } else {
+    loginResult.innerHTML = 'Invalid login details'
   }
 })
