@@ -193,4 +193,18 @@ gradeBtn.addEventListener("click", () => {
   }
 })
 
-/
+// Voting Eligibility
+const ageInput = document.querySelector('.age-input');
+const country = document.querySelector('.nationality');
+const voteBtn = document.querySelector('.vote-btn');
+const voteResult = document.querySelector('.vote-result');
+
+voteBtn.addEventListener("click", () => {
+  if (ageInput.value.trim() === "" || country.value.trim() === "") {
+    voteResult.innerHTML = 'Please enter complete details.'
+  } else if (ageInput.value >= 18 && (country.value === 'Nigerian' || country.value === 'Nigeria')) {
+    voteResult.innerHTML = 'You are eligible to vote.'
+  } else {
+    voteResult.innerHTML = 'You are NOT eligible to vote.'
+  }
+})
