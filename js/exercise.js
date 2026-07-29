@@ -68,16 +68,16 @@ safe.addEventListener("click", () => {
   
 });
 
-//Odd and even calculator
-let num = Number(prompt("Enter a number:"));
+// //Odd and even calculator
+// let num = Number(prompt("Enter a number:"));
 
-if (num % 2 === 0) {
-  console.log("Even");
-} else if (!num) {
-  console.log('Not a number')
-} else {
-  console.log("Odd");
-}
+// if (num % 2 === 0) {
+//   console.log("Even");
+// } else if (!num) {
+//   console.log('Not a number')
+// } else {
+//   console.log("Odd");
+// }
 
 //Pass/ Fail
 const scoreText = document.querySelector('.score-text');
@@ -112,6 +112,16 @@ const ageBtn = document.querySelector('.age-btn');
 const ageResult = document.getElementById('ageResult');
 
 ageBtn.addEventListener("click", () => {
+  ageFunction();
+})
+
+ageText.addEventListener("keydown", () => {
+  if (event.key === 'Enter') {
+    ageFunction();
+  }
+})
+
+function ageFunction() {
   const age = ageText.value
 
   if (ageText.value.trim() === "") {
@@ -123,7 +133,7 @@ ageBtn.addEventListener("click", () => {
   } else {
     ageResult.innerHTML = 'Adult.'
   }
-})
+}
 
 //Positive / Negative
 const numText = document.querySelector('.num-text');
