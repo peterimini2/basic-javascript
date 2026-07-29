@@ -24,14 +24,26 @@ reset.addEventListener("click", () => {
   score.wins = 0;
   score.losses = 0;
   score.ties = 0;
-  localStorage.removeItem('score');
-  alert('Score reset successfully.');
+  localStorage.setItem('score', JSON.stringify(score));
+
+  updateScore();
+  // alert('Score reset successfully.');
 });
 
-const score = JSON.parse(localStorage.getItem('score'));
+let score = JSON.parse(localStorage.getItem('score')) ||  {
+  wins: 0,
+  losses: 0,
+  ties: 0
+};
 
-document.querySelector('.js-score')
-  .innerHTML = `Wins: ${ score.wins } Loss: ${ score.losses } Ties: ${ score.ties }`;
+updateScore();
+
+function updateScore() {
+  document.querySelector('.js-score').textContent =
+    `Wins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`;
+}
+
+//document.querySelector('.js-score').innerHTML = `Wins: ${ score.wins } Loss: ${ score.losses } Ties: ${ score.ties }`;
 
 
 function playGame(playerMove) {
@@ -77,8 +89,14 @@ function playGame(playerMove) {
 
   localStorage.setItem('score', JSON.stringify(score));
 
-  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
-  Wins: ${score.wins} Loss: ${score.losses} Ties: ${score.ties}`);
+  updateScore();
+
+  document.querySelector('.js-result').innerHTML = result;
+  document.querySelector('.js-moves').innerHTML = `You: ${playerMove} - Computer: ${computerMove}`;
+
+
+  // alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+  // Wins: ${score.wins} Loss: ${score.losses} Ties: ${score.ties}`);
 };
 
 function pickComputerMove() {
