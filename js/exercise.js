@@ -171,7 +171,22 @@ const loginBtn = document.querySelector('.login-btn');
 const loginResult = document.getElementById('loginResult');
 
 loginBtn.addEventListener("click", () => {
+  loginFunc();
+})
 
+userName.addEventListener("keydown", () => {
+  if (event.key = 'Enter') {
+    loginFunc();
+  }
+})
+
+password.addEventListener("keydown", () => {
+  if (event.key = 'Enter') {
+    loginFunc();
+  }
+})
+
+function loginFunc() {
   if (userName.value.trim() === "" || password.value.trim() === "") {
     loginResult.innerHTML = "Please enter login details"
   } else if (userName.value === 'Peter' && password.value === '024118') {
@@ -179,7 +194,7 @@ loginBtn.addEventListener("click", () => {
   } else {
     loginResult.innerHTML = 'Invalid login details'
   }
-})
+}
 
 // Largest Number
 const largeNumber = document.querySelector('.large-num');
