@@ -141,10 +141,20 @@ const numBtn = document.querySelector('.num-btn');
 const numResult = document.getElementById('numResult');
 
 numBtn.addEventListener("click", () => {
+  numTotal();
+})
+
+numText.addEventListener("keydown", () => {
+  if (event.key = 'Enter') {
+    numTotal();
+  }
+})
+
+function numTotal() {
   const num = numText.value;
 
   if (numText.value.trim() === "") {
-    numResult.innerHTML = 'Please input number'
+    numResult.innerHTML = 'Please input number.'
   } else if (num > 0) {
     numResult.innerHTML = 'Positive.';
   } else if (num < 0) {
@@ -152,7 +162,7 @@ numBtn.addEventListener("click", () => {
   } else {
     numResult.innerHTML = 'Zero.'
   }
-})
+}
 
 //Login 
 const userName = document.querySelector('.username');
