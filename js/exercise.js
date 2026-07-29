@@ -85,6 +85,16 @@ const checkBtn = document.querySelector('.check-btn');
 const scoreResult = document.getElementById('scoreResult');
 
 checkBtn.addEventListener("click", () => {
+  gradeResult();
+})
+
+scoreText.addEventListener("keydown", () => {
+  if (event.key === 'Enter') {
+    gradeResult();
+  }
+})
+
+function gradeResult() {
   const score = scoreText.value
 
   if (scoreText.value.trim() === "") {
@@ -94,7 +104,7 @@ checkBtn.addEventListener("click", () => {
   } else {
     scoreResult.innerHTML = 'Fail.'
   }
-})
+}
 
 // Age result
 const ageText = document.querySelector('.age-text');
