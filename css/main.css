@@ -1,3 +1,8 @@
+body {
+  font-family: Arial;
+}
+
+
 button {
   background-color: blueviolet;
   border: none;
@@ -9,4 +14,42 @@ button {
 button:hover {
   cursor: pointer;
   background-color: rgb(86, 85, 85);
+}
+
+.subscribe-btn {
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+.is-subscribed {
+  background-color: rgb(240, 240, 240);
+  color:black;
+}
+
+.order-input {
+  font-size: 15px;
+  padding: 10px;
+}
+
+.calc-btn {
+  background-color: green;
+  color: white;
+  font-size: 15px;
+  padding: 12px 15px;
+  border: none;
+}
+
+/* Rock paper scissors */
+.rock-paper {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: Arial;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
 }

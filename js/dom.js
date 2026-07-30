@@ -27,9 +27,13 @@ subscribeBtn.addEventListener("click", () => {
 });
 
 function subscribe() {
-  subscribeBtn.innerHTML === 'Subscribe' ?
-    subscribeBtn.innerHTML = 'Subscribed'
-    : subscribeBtn.innerHTML = 'Subscribe';
+  if (subscribeBtn.textContent === 'Subscribe') {
+    subscribeBtn.textContent = 'Subscribed';
+    subscribeBtn.classList.add('is-subscribed');
+  } else {
+    subscribeBtn.innerHTML = 'Subscribe';
+    subscribeBtn.classList.remove('is-subscribed');
+  }
 }
 
 //Cost of Order
