@@ -73,3 +73,16 @@ order.addEventListener("click", () => {
   console.log(`Order Successful. Total: ${cartQuantity}`);
 });
 
+const person = {
+  firstName: "Peter",
+  lastName: "Imini"
+};
+
+localStorage.setItem('fullName', JSON.stringify(person));
+
+const myId = JSON.parse(localStorage.getItem('fullName'));
+
+console.log(myId.firstName);
+console.log(myId.lastName);
+
+localStorage.clear();
