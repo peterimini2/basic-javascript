@@ -8,22 +8,15 @@
   <script src="js/todo-list.js" defer></script>
 </head>
 <body>
-  <p>Todo List Practice 1</p>
-  <input type="text" placeholder="Todo name">
-  <button>Add</button>
-  <br><br><br>
-
-  <p>Todo List Practice 2</p>
-  <input type="text" placeholder="Todo name" class="js-name-input input-todo">
-  <button class="todo-btn">Add</button>
-  <div class="js-todo-list"></div>
-  <br><br><br>
 
   <p>Todo List</p>
-  <input type="text" placeholder="Todo name" class="todo-input">
-  <input type="date" class="todo-input">
-  <button class="add-btn">Add</button>
-
+  <div class="todo-input-grid">
+    <input type="text" placeholder="Todo name" class="js-name-input input-todo name-input">
+    <input type="date" class="js-date-input date-input">
+    <button class="todo-btn add-todo-btn">Add</button>
+  </div>
+  <div class="js-todo-list todo-grid"></div>
+  
  
 </body>
 </html>
