@@ -145,7 +145,7 @@ numBtn.addEventListener("click", () => {
 })
 
 numText.addEventListener("keydown", () => {
-  if (event.key = 'Enter') {
+  if (event.key === 'Enter') {
     numTotal();
   }
 })
@@ -175,13 +175,13 @@ loginBtn.addEventListener("click", () => {
 })
 
 userName.addEventListener("keydown", () => {
-  if (event.key = 'Enter') {
+  if (event.key === 'Enter') {
     loginFunc();
   }
 })
 
 password.addEventListener("keydown", () => {
-  if (event.key = 'Enter') {
+  if (event.key === 'Enter') {
     loginFunc();
   }
 })
