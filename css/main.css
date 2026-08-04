@@ -64,7 +64,8 @@ button:hover {
   margin-top: 60px;
 }
 
-.reset-btn {
+.reset-btn,
+.auto-play-btn {
   background-color: white;
   border: none;
   font-size: 15px;

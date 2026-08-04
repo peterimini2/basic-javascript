@@ -3,10 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advance function</title>
-  <script src="js/advance-function.js"></script>
+  <title>Rock Paper Scisssors 2</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/advance-function.js" defer></script>
 </head>
-<body>
-  
+<body class="rock-paper">
+  <p class="title">Rock Paper Scissors</p>
+  <button id="rock" class="move-button"><img src="images/rock-emoji.png" alt="rock" class="move-icon"></button>
+  <button id="paper" class="move-button"><img src="images/paper-emoji.png" alt="paper" class="move-icon"></button>
+  <button id="scissors" class="move-button"><img src="images/scissors-emoji.png" alt="scissors" class="move-icon"></button>
+  <p class="js-result result">You Win</p>
+  <p class="js-moves"></p>
+  <p class="js-score score"></p>
+
+  <button id="reset" class="reset-btn">Reset Score</button>
+  <button id="auto-play" class="auto-play-btn">Auto Play</button>
 </body>
 </html>
