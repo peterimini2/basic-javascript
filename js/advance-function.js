@@ -63,7 +63,7 @@ let intervalId;
 
 function autoPlay() {
   if (!isAutoPlaying) {
-    intervalId = setInterval(function() {
+    intervalId = setInterval(() => {
     const playerMove = pickComputerMove();
     playGame(playerMove);
     }, 1000);
@@ -74,6 +74,15 @@ function autoPlay() {
 }
 }
 
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'r') {
+    playGame('rock');
+  } else if (event.key === 'p') {
+    playGame('paper');
+  } else if (event.key === 's') {
+    playGame('scissors');
+  }
+});
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
